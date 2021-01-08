@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.draft {
+    background-color: #c4c4c4;
+}
