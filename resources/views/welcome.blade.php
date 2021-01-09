@@ -87,7 +87,15 @@
     </div> <!-- end news -->
     </div> 
     <div class="col-span-3">
-    <h2 class="text-3xl mt-10 font-medium underline">ช่องทางการติดตาม</h2>
+        <h2 class="text-3xl mt-10 font-medium underline mb-2">ช่องทางการติดตาม</h2>
+        <div class="flex gap-4 items-center py-4">
+            <img src="{{ asset('img/facebook.png') }}" alt="" class="w-12">
+            <span class="text-lg font-semibold">Ponlawat Suparat</span>
+        </div>
+        <div class="flex gap-4 items-center">
+            <img src="{{ asset('img/youtube.png') }}" alt="" class="w-12">
+            <span class="text-lg font-semibold">Ponlawat Suparat</span>
+        </div>
     </div>
 </div>
 @endsection

@@ -44,27 +44,34 @@
     }
 </style>
 <body>
-<body class="h-screen bg-white">
+<body>
   <div class="container mx-auto h-full">
     <div class="w-32 mx-auto pt-10">
       <img src="{{ asset('img/logo.png') }}" alt="logo">
     </div>
     <hr class="mt-10"/>
     <nav class="flex justify-center gap-2 my-1 font-medium">
-      <a href="#" class="px-3 py-4 border-b-4 border-white hover-border-orange">
+      <a href="#" class="px-3 py-4 border-b-4 border-white  hover:border-orange">
         หน้าแรก
       </a>
-      <a href="#" class="px-3 py-4 border-b-4 border-white hover-border-orange">
+      <a href="#" class="px-3 py-4 border-b-4 border-white hover:border-orange">
         ณัฐชา
       </a>
-      <a href="#" class="px-3 py-4 border-b-4 border-white hover-border-orange">
+      <a href="#" class="px-3 py-4 border-b-4 border-white hover:border-orange">
         ทีมงาน
       </a>
-      <a href="#" class="px-3 py-4 border-b-4 border-white hover-border-orange">
+      <a href="#" class="px-3 py-4 border-b-4 border-white hover:border-orange">
         แกลลอรี่
       </a>
     </nav>
     @yield('content')
   </div>
+  <footer class="bg-navy h-52">
+    <div class="container mx-auto grid grid-cols-12 h-full">
+      <div class="col-start-2 col-span-3 flex items-center">
+        <img src="{{ asset('img/logo.png') }}" alt="" class="w-5/12 my-auto mx-auto">
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
