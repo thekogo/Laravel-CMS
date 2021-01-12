@@ -40,13 +40,11 @@ class TagController extends Controller
         $this->validate($request, [
             'name' => 'required|unique:tags'
         ], [
-            'thumbnail.required' => 'กรุณาระบุ url รูป',
             'name.required' => 'กรุณาระบุชื่อ Tag',
             'name.unique' => 'มีชื่อนี้แล้ว',
         ]);
 
         $tag = new Tag();
-        $tag->thumbnail = $request->thumbnail;
         $tag->user_id = Auth::id();
         $tag->name = $request->name;
         $tag->slug = str_slug($request->name);
