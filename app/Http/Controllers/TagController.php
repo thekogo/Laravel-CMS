@@ -6,6 +6,15 @@ use App\Tag;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
+function str_slug($title, $separator = '-', $language = 'en')
+{
+    $string = preg_replace('/[^a-z0-9ก-๙เแ]/i', $separator, $title);
+    $string = preg_replace('/-+/', $separator, $string);
+    $string = preg_replace('/-$|^-/', '', $string);
+    return $string;
+    // return Str::slug($title, $separator, $language);
+}
+
 class TagController extends Controller
 {
     /**
