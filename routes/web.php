@@ -13,10 +13,23 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Auth::routes(['register' => false]);
+Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
+
+
+Route::get('/', 'WebsiteController@index')->name('index');
+Route::get('/tags/{slug}', 'WebsiteController@tag')->name('tag');
+Route::get('/news/{slug}', 'WebsiteController@post')->name('post');
+Route::get('/news', 'WebsiteController@posts')->name('posts');
+Route::get('/galleries', 'WebsiteController@galleries')->name('galleries');
+Route::get('/contact', 'WebsiteController@showContactForm')->name('contact.show');
+Route::post('/contact', 'WebsiteController@submitContactForm')->name('contact.submit');
+Route::get('/about', 'WebsiteController@about')->name('about');
+
+Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
+    Route::get('/', 'HomeController@Index');
+    Route::resource('tags', 'TagController');
+    Route::resource('posts', 'PostController');
+    Route::resource('galleries', 'GalleryController');
+    Route::post('/uploadImage', 'ImageController@uploadImage')->name('uploadImage');
 });
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');

@@ -16,6 +16,9 @@ module.exports = {
       indigo: colors.indigo,
       red: colors.rose,
       yellow: colors.amber,
+      green: colors.emerald,
+      purple: colors.violet,
+      pink: colors.pink,
       orange: '#F8813A',
       navy: '#0f5186'
     }
@@ -23,5 +26,7 @@ module.exports = {
   variants: {
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/aspect-ratio'),
+  ],
 }

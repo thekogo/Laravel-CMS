@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Post;
+use App\Tag;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,6 +25,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $tags = Tag::orderBy('id', 'DESC')->limit(5)->get();
+        $posts = Post::orderBy('id', 'DESC')->where('post_type', 'post')->limit(5)->get();
+        return view('admin.home', compact('posts', 'tags'));
     }
 }
