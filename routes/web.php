@@ -25,11 +25,14 @@ Route::get('/galleries', 'WebsiteController@galleries')->name('galleries');
 Route::get('/contact', 'WebsiteController@showContactForm')->name('contact.show');
 Route::post('/contact', 'WebsiteController@submitContactForm')->name('contact.submit');
 Route::get('/about', 'WebsiteController@about')->name('about');
+Route::get('/team', 'WebsiteController@team')->name('team');
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::get('/', 'HomeController@Index');
     Route::resource('tags', 'TagController');
     Route::resource('posts', 'PostController');
     Route::resource('galleries', 'GalleryController');
+    Route::resource('setting', 'SettingController');
+    Route::resource('/change_password', 'UserController');
     Route::post('/uploadImage', 'ImageController@uploadImage')->name('uploadImage');
 });

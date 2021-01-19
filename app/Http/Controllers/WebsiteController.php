@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Post;
 use App\Tag;
 use App\Gallery;
+use App\Setting;
 
 function str_slug($title, $separator = '-', $language = 'en')
 {
@@ -19,14 +20,20 @@ class WebsiteController extends Controller
 {
     public function index()
     {
+        $setting = Setting::first();
         $tags = Tag::orderBy('name', 'ASC')->where('is_published', '1')->get();
         $posts = Post::orderBy('id', 'DESC')->where('is_published', '1')->where('post_type', 'post')->paginate(5);
-        return view('website.index', compact('tags', 'posts'));
+        return view('website.index', compact('tags', 'posts', 'setting'));
     }
 
     public function about()
     {
         return view('website.about');
+    }
+
+    public function team()
+    {
+        return view('website.team');
     }
 
     public function post($slug)

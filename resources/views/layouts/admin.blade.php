@@ -99,8 +99,8 @@
                             <button onclick="toggleDD('myDropdown')" class="drop-button text-white focus:outline-none"> <span class="pr-2"><i class="em em-robot_face"></i></span> {{ Auth::user()->username }} <svg class="h-3 fill-current inline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                                     <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" /></svg></button>
                             <div id="myDropdown" class="dropdownlist absolute bg-gray-800 text-white right-0 mt-3 p-3 overflow-auto z-30 invisible w-44">
-                                <a href="#" class="p-2 hover:bg-gray-800 text-white text-sm no-underline hover:no-underline flex gap-4"><i class="fa fa-user fa-fw"></i> Profile</a>
-                                <a href="#" class="p-2 hover:bg-gray-800 text-white text-sm no-underline hover:no-underline flex gap-4"><i class="fa fa-cog fa-fw"></i> Settings</a>
+                                <a href="{{ route('change_password.index') }}" class="p-2 hover:bg-gray-800 text-white text-sm no-underline hover:no-underline flex gap-4 items-center"><i class="fa fa-user fa-fw items-center"></i>Change Password</a>
+                                <a href="{{ route('setting.index') }}" class="p-2 hover:bg-gray-800 text-white text-sm no-underline hover:no-underline flex gap-4"><i class="fa fa-cog fa-fw"></i> Settings</a>
                                 <a href="{{ url('logout') }}" class="p-2 hover:bg-gray-800 text-white text-sm no-underline hover:no-underline flex gap-4"><i class="fas fa-sign-out-alt fa-fw"></i> Log Out</a>
                             </div>
                         </div>
@@ -139,7 +139,7 @@
                         </a>
                     </li>
                     <li class="mr-3 flex-1 hover:text-white">
-                        <a href="#" class="block py-1 md:py-3 pl-0 md:pl-1 align-middle no-underline {{ (request()->is('admin/setting/*')) ? '' : 'hover:' }}text-white border-b-2 border-gray-800 {{ (request()->is('admin/setting/*')) ? '' : 'hover:' }}border-orange">
+                        <a href="{{ route('setting.index') }}" class="block py-1 md:py-3 pl-0 md:pl-1 align-middle no-underline {{ (request()->is('admin/setting/*')) ? '' : 'hover:' }}text-white border-b-2 border-gray-800 {{ (request()->is('admin/setting/*')) ? '' : 'hover:' }}border-orange">
                             <i class="fa fa-wallet pr-0 md:pr-3"></i><span class="pb-1 md:pb-0 text-xs md:text-base hover:text-white {{ (request()->is('admin/setting/*')) ? 'text-white md:text-white' : 'text-gray-600 md:text-gray-400:' }} block md:inline-block">Setting</span>
                         </a>
                     </li>

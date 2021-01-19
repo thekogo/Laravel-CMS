@@ -83,7 +83,7 @@
       <a href="{{ route('about') }}" class="px-3 py-4 border-b-4 border-white hover:border-orange">
         ณัฐชา
       </a>
-      <a href="#" class="px-3 py-4 border-b-4 border-white hover:border-orange">
+      <a href="{{ route('team') }}" class="px-3 py-4 border-b-4 border-white hover:border-orange">
         ทีมงาน
       </a>
       <a href="{{ route('galleries') }}" class="px-3 py-4 border-b-4 border-white hover:border-orange">

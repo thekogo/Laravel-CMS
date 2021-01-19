@@ -4,17 +4,17 @@
 <div class="lg:grid grid-row-2 grid-cols-12 gap-4">
     <div class="lg:col-start-2 lg:col-span-7 lg:h-full row-span-2 shadow-xl aspect-h-9 aspect-w-16 mb-10">
         <div class="draft h-full">
-
+            <img src="{{ $setting->image_1 }}" class="object-cover w-full h-full">
         </div>
     </div>
     <div class="col-span-3 row-span-1 h-full shadow-xl aspect-h-9 aspect-w-16 mb-10">
         <div class="draft h-full">
-
+            <img src="{{ $setting->image_2 }}" class="object-cover w-full h-full">
         </div>
     </div>
     <div class="col-span-3 row-span-1 h-full shadow-xl aspect-h-9 aspect-w-16 mb-10">
         <div class="draft h-full">
-
+            <img src="{{ $setting->image_3 }}" class="object-cover w-full h-full">
         </div>
     </div>
 </div>
