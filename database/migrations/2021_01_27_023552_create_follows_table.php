@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSetting extends Migration
+class CreateFollowsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,12 @@ class CreateSetting extends Migration
      */
     public function up()
     {
-        Schema::create('setting', function (Blueprint $table) {
+        Schema::create('follows', function (Blueprint $table) {
             $table->id();
-            $table->string('image_1');
-            $table->string('image_2');
-            $table->string('image_3');
-            $table->string('conclusion');
+            $table->string('contact');
+            $table->string('url');
+            $table->string('logo_url')->nullable();
+            $table->enum('is_published', ['1', '0']);
             $table->timestamps();
         });
     }
@@ -30,6 +30,6 @@ class CreateSetting extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('setting');
+        Schema::dropIfExists('follows');
     }
 }

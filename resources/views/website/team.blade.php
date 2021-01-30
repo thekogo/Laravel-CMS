@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.app', ['follows' => $follows])
 
 @section('content')
 <div class="grid grid-cols-12 mt-7 gap-y-5">

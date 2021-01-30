@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.app', ['follows' => $follows])
 
 @section('content')
 <div class="lg:grid grid-row-2 grid-cols-12 gap-4">
@@ -68,14 +68,14 @@
     <div class="lg:col-span-3 col-span-8">
         <div>
             <h2 class="text-3xl mt-10 font-medium underline mb-2">ช่องทางการติดตาม</h2>
-            <div class="flex gap-4 items-center py-4">
-                <img src="{{ asset('img/facebook.png') }}" alt="" class="w-12">
-                <span class="text-lg font-semibold">Ponlawat Suparat</span>
-            </div>
-            <div class="flex gap-4 items-center">
-                <img src="{{ asset('img/youtube.png') }}" alt="" class="w-12">
-                <span class="text-lg font-semibold">Ponlawat Suparat</span>
-            </div>
+            @foreach ($follows as $follow)
+                <div class="flex gap-4 items-center py-4">
+                    <img src="{{ $follow->logo_url }}" alt="" class="w-12">
+                    <span class="text-lg font-semibold">
+                        <a href="{{ $follow->url }}">{{ $follow->contact }}</a>
+                    </span>
+                </div>
+            @endforeach
         </div>
         <div>
             <h2 class="text-3xl mt-10 font-medium underline mb-2">หมวดหมู่</h2>

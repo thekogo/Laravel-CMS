@@ -40,7 +40,7 @@ class GalleryController extends Controller
         $this->validate(
             $request,
             [
-                "image_url" => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:4096',
+                "image_url" => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:10000',
                 "name" => 'required',
             ],
             [

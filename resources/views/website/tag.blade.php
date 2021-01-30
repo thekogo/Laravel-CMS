@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.app', ['follows' => $follows])
 
 @section('content')
 <h4 class="text-3xl font-medium text-center pt-7 pb-5 underline">{{ $tag->name }}</h4>

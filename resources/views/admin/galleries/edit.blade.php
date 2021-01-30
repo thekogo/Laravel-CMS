@@ -9,7 +9,7 @@
 <div class="bg-white m-5 rounded-lg shadow-lg px-10 py-2">
     <h4 class="text-3xl font-medium mt-2">แก้ไข หมวดหมู่</h4>
     <br>
-    {!! Form::open(['route' => ['galleries.update', $gallery->id], 'method' => 'put']) !!}
+    {!! Form::open(['route' => ['galleries.update', $gallery->id], 'method' => 'put', 'files' => true]) !!}
     <div class="">
         {!! Form::label('image_url', 'ภาพปก : ', ['class' => 'text-xl']) !!}
         <div class="w-96 draft h-72 rounded-lg mb-2">

@@ -98,19 +98,21 @@
         <img src="{{ asset('img/logo.png') }}" alt="" class="lg:w-5/12 w-3/12 my-auto mx-auto">
       </div>
       <div class="col-span-5 flex items-center">
-        <p class="p-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta adipisci quo assumenda? Doloremque animi ducimus repudiandae, sapiente, laboriosam illo asperiores molestiae a quam, nulla deleniti repellendus at minus cumque quasi?</p>
+        <p class="p-2">{{ $setting->conclusion }}</p>
       </div>
       <div class="col-span-3 flex flex-col justify-between py-5">
         <div class="flex gap-4">
-          <img src="{{ asset('img/facebook.png') }}" alt="Facebook Logo" class="w-10">
-          <img src="{{ asset('img/youtube.png') }}" alt="Facebook Logo" class="w-10">
-
+            @foreach ($follows as $follow)
+                <a href="{{ $follow->url }}">
+                    <img src="{{ $follow->logo_url }}" alt="{{ $follow->contact }}" class="w-10">
+                </a>
+            @endforeach
         </div>
         <div>
-        <a href="#">หน้าแรก</a> |
-        <a href="#">ณัฐชา</a> |
-        <a href="#">ทีมงาน</a> |
-        <a href="#">แกลลอรี่</a>
+        <a href="{{ route('index') }}">หน้าแรก</a> |
+        <a href="{{ route('about') }}">ณัฐชา</a> |
+        <a href="{{ route('team') }}">ทีมงาน</a> |
+        <a href="{{ route('galleries') }}">แกลลอรี่</a>
         </div>
       </div>
     </div>

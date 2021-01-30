@@ -89,12 +89,6 @@
             <div class="flex w-full pt-2 content-center justify-between md:w-1/3 md:justify-end">
                 <ul class="list-reset flex justify-between flex-1 md:flex-none items-center">
                     <li class="flex-1 md:flex-none md:mr-3">
-                        <a class="inline-block py-2 px-4 text-white no-underline" href="#">Active</a>
-                    </li>
-                    <li class="flex-1 md:flex-none md:mr-3">
-                        <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-4" href="#">link</a>
-                    </li>
-                    <li class="flex-1 md:flex-none md:mr-3">
                         <div class="relative inline-block">
                             <button onclick="toggleDD('myDropdown')" class="drop-button text-white focus:outline-none"> <span class="pr-2"><i class="em em-robot_face"></i></span> {{ Auth::user()->username }} <svg class="h-3 fill-current inline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                                     <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" /></svg></button>
@@ -124,23 +118,28 @@
                         </a>
                     </li>
                     <li class="mr-3 flex-1">
-                        <a href="{{ route('posts.index') }}" class="block py-1 md:py-3 pl-1 align-middle  no-underline {{ (request()->is('admin/posts/*')) ? '' : 'hover:' }}text-white border-b-2 border-gray-800 {{ (request()->is('admin/posts/*')) ? '' : 'hover:' }}border-orange">
-                            <i class="fa fa-envelope pr-0 md:pr-3"></i><span class="pb-1 md:pb-0 text-xs md:text-base hover:text-white {{ (request()->is('admin/posts/*')) ? 'text-white md:text-white' : 'text-gray-600 md:text-gray-400:' }} block md:inline-block">Posts</span>
+                        <a href="{{ route('posts.index') }}" class="block py-1 md:py-3 pl-1 align-middle  no-underline {{ (request()->is('admin/posts*')) ? '' : 'hover:' }}text-white border-b-2 border-gray-800 {{ (request()->is('admin/posts*')) ? '' : 'hover:' }}border-orange">
+                            <i class="fa fa-envelope pr-0 md:pr-3"></i><span class="pb-1 md:pb-0 text-xs md:text-base hover:text-white {{ (request()->is('admin/posts*')) ? 'text-white md:text-white' : 'text-gray-600 md:text-gray-400:' }} block md:inline-block">Posts</span>
                         </a>
                     </li>
                     <li class="mr-3 flex-1">
-                        <a href="{{ route('tags.index') }}" class="block py-1 md:py-3 pl-1 align-middle  no-underline {{ (request()->is('admin/tags/*')) ? '' : 'hover:' }}text-white border-b-2 border-gray-800 {{ (request()->is('admin/tags/*')) ? '' : 'hover:' }}border-orange">
-                            <i class="fas fa-chart-area pr-0 md:pr-3 text-blue-600"></i><span class="pb-1 md:pb-0 text-xs hover:text-white {{ (request()->is('admin/tags/*')) ? 'text-white md:text-white' : 'text-gray-600 md:text-gray-400:' }} md:text-base block md:inline-block">Tags</span>
+                        <a href="{{ route('tags.index') }}" class="block py-1 md:py-3 pl-1 align-middle  no-underline {{ (request()->is('admin/tags*')) ? '' : 'hover:' }}text-white border-b-2 border-gray-800 {{ (request()->is('admin/tags*')) ? '' : 'hover:' }}border-orange">
+                            <i class="fas fa-chart-area pr-0 md:pr-3 text-blue-600"></i><span class="pb-1 md:pb-0 text-xs hover:text-white {{ (request()->is('admin/tags*')) ? 'text-white md:text-white' : 'text-gray-600 md:text-gray-400:' }} md:text-base block md:inline-block">Tags</span>
                         </a>
                     </li>
                     <li class="mr-3 flex-1">
-                        <a href="{{ route('galleries.index') }}" class="block py-1 md:py-3 pl-1 align-middle  no-underline {{ (request()->is('admin/galleries/*')) ? '' : 'hover:' }}text-white border-b-2 border-gray-800 {{ (request()->is('admin/galleries/*')) ? '' : 'hover:' }}border-orange">
-                            <i class="fas fa-chart-area pr-0 md:pr-3 text-blue-600"></i><span class="pb-1 md:pb-0 text-xs hover:text-white {{ (request()->is('admin/galleries/*')) ? 'text-white md:text-white' : 'text-gray-600 md:text-gray-400:' }} md:text-base block md:inline-block">Galleries</span>
+                        <a href="{{ route('galleries.index') }}" class="block py-1 md:py-3 pl-1 align-middle  no-underline {{ (request()->is('admin/galleries*')) ? '' : 'hover:' }}text-white border-b-2 border-gray-800 {{ (request()->is('admin/galleries*')) ? '' : 'hover:' }}border-orange">
+                            <i class="fas fa-chart-area pr-0 md:pr-3 text-blue-600"></i><span class="pb-1 md:pb-0 text-xs hover:text-white {{ (request()->is('admin/galleries*')) ? 'text-white md:text-white' : 'text-gray-600 md:text-gray-400:' }} md:text-base block md:inline-block">Galleries</span>
+                        </a>
+                    </li>
+                    <li class="mr-3 flex-1">
+                        <a href="{{ route('follow.index') }}" class="block py-1 md:py-3 pl-1 align-middle  no-underline {{ (request()->is('admin/follow*')) ? '' : 'hover:' }}text-white border-b-2 border-gray-800 {{ (request()->is('admin/follow*')) ? '' : 'hover:' }}border-orange">
+                            <i class="fas fa-chart-area pr-0 md:pr-3 text-blue-600"></i><span class="pb-1 md:pb-0 text-xs hover:text-white {{ (request()->is('admin/follow*')) ? 'text-white md:text-white' : 'text-gray-600 md:text-gray-400:' }} md:text-base block md:inline-block">Follow</span>
                         </a>
                     </li>
                     <li class="mr-3 flex-1 hover:text-white">
-                        <a href="{{ route('setting.index') }}" class="block py-1 md:py-3 pl-0 md:pl-1 align-middle no-underline {{ (request()->is('admin/setting/*')) ? '' : 'hover:' }}text-white border-b-2 border-gray-800 {{ (request()->is('admin/setting/*')) ? '' : 'hover:' }}border-orange">
-                            <i class="fa fa-wallet pr-0 md:pr-3"></i><span class="pb-1 md:pb-0 text-xs md:text-base hover:text-white {{ (request()->is('admin/setting/*')) ? 'text-white md:text-white' : 'text-gray-600 md:text-gray-400:' }} block md:inline-block">Setting</span>
+                        <a href="{{ route('setting.index') }}" class="block py-1 md:py-3 pl-0 md:pl-1 align-middle no-underline {{ (request()->is('admin/setting*')) ? '' : 'hover:' }}text-white border-b-2 border-gray-800 {{ (request()->is('admin/setting*')) ? '' : 'hover:' }}border-orange">
+                            <i class="fa fa-wallet pr-0 md:pr-3"></i><span class="pb-1 md:pb-0 text-xs md:text-base hover:text-white {{ (request()->is('admin/setting*')) ? 'text-white md:text-white' : 'text-gray-600 md:text-gray-400:' }} block md:inline-block">Setting</span>
                         </a>
                     </li>
                 </ul>

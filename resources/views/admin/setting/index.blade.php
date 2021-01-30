@@ -7,11 +7,16 @@
 @section('content')
     <div class="bg-navy pt-3">
         <div class="rounded-tl-3xl bg-gradient-to-r from-blue-900 to-gray-800 p-4 shadow text-2xl text-white">
-            <h3 class="font-bold pl-2">ข่าวสาร</h3>
+            <h3 class="font-bold pl-2">Setting</h3>
         </div>
     </div>
     <div class="bg-white m-5 rounded-lg shadow-lg px-10 py-2">
-        <h4 class="text-3xl font-medium mt-2">เพิ่ม ข่าวสาร</h4>
+        <h4 class="text-3xl font-medium mt-2">ตั้งค่ารูปปก</h4>
+        @if (Session::has('message'))
+            <div class="text-lg text-green-600 font-semibold bg-green-100 px-7 py-2 rounded-md">
+                {{ Session('message')  }}
+            </div>
+        @endif
         <br>
         <div class="lg:grid grid-row-2 grid-cols-12 gap-4">
             <div class="lg:col-start-2 lg:col-span-7 lg:h-full row-span-2 shadow-xl aspect-h-9 aspect-w-16 mb-10">
@@ -55,6 +60,15 @@
             {!! Form::file('image_3', null, ['class' => 'block border w-full mt-2 px-3 py-2 rounded-md']) !!}
             @if ($errors->has('image_3'))
                 <span class="text-red-600 font-semibold">{{ $errors->first('image_3') }}</span>
+            @endif
+        </div>
+        <br>
+
+        <div class="">
+            {!! Form::label('conclusion', 'คำทิ้งทาย :', ['class' => 'text-xl']) !!}
+            {!! Form::textarea('conclusion', $setting->conclusion, ['class' => 'block border w-full mt-2 px-3 py-2 rounded-md', 'placeholder' => '...']) !!}
+            @if ($errors->has('conclusion'))
+                <span class="text-red-600 font-semibold">{{ $errors->first('conclusion') }}</span>
             @endif
         </div>
         <br>

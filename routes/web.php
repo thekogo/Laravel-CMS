@@ -33,6 +33,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::resource('posts', 'PostController');
     Route::resource('galleries', 'GalleryController');
     Route::resource('setting', 'SettingController');
+    Route::resource('follow', 'FollowController');
     Route::resource('/change_password', 'UserController');
     Route::post('/uploadImage', 'ImageController@uploadImage')->name('uploadImage');
 });

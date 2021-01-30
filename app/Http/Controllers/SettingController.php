@@ -14,7 +14,8 @@ class SettingController extends Controller
      */
     public function index()
     {
-        return view('admin.setting.index');
+        $setting = Setting::first();
+        return view('admin.setting.index', compact('setting'));
     }
 
     /**
@@ -72,9 +73,9 @@ class SettingController extends Controller
         $this->validate(
             $request,
             [
-                "image_1" => 'image|mimes:jpeg,png,jpg,gif,svg|max:4096',
-                "image_2" => 'image|mimes:jpeg,png,jpg,gif,svg|max:4096',
-                "image_3" => 'image|mimes:jpeg,png,jpg,gif,svg|max:4096',
+                "image_1" => 'image|mimes:jpeg,png,jpg,gif,svg|max:10000',
+                "image_2" => 'image|mimes:jpeg,png,jpg,gif,svg|max:10000',
+                "image_3" => 'image|mimes:jpeg,png,jpg,gif,svg|max:10000',
             ],
         );
 
@@ -115,6 +116,7 @@ class SettingController extends Controller
         $setting->image_1 = $image_1;
         $setting->image_2 = $image_2;
         $setting->image_3 = $image_3;
+        $setting->conclusion = $request->conclusion;
 
         $setting->save();
 

@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.app', ['follows' => $follows])
 
 @section('content')
 <div class="grid grid-cols-12 mt-7">
@@ -88,10 +88,10 @@
                     </div>
                     <div class="order-1 bg-orange rounded-lg shadow-xl lg:w-5/12 w-full px-6 py-4 flex justify-between">
                         <div>
-                            <h3 class="mb-3 font-bold text-gray-800 text-2xl">ประกาศนียบัตรวิชาชีพ (ปวช.)</h3>
-                            <p class="leading-snug tracking-wide text-gray-900 text-opacity-100 text-xl">โรงเรียนดทคโนโลยีสยาม บางกอกใหญ่ กรงเทพมหานคร</p>
+                            <h3 class="mb-3 font-bold text-gray-800 text-2xl">บริษัท ไทยเซ็มคอนจำกัด</h3>
+                            <p class="leading-snug tracking-wide text-gray-900 text-opacity-100 text-xl">พนักงานเขียนแบบไฟฟ้า</p>
                         </div>
-                        <img src="{{ asset('img/school3.png') }}" alt="school" class="h-40">
+                        <img src="{{ asset('img/work1.png') }}" alt="school" class="h-40">
                     </div>
                 </div>
 
@@ -103,10 +103,10 @@
                         </div>
                         <div class="order-1 bg-orange rounded-lg shadow-xl lg:w-5/12 w-full px-6 py-4 flex justify-between">
                             <div>
-                                <h3 class="mb-3 font-bold text-gray-800 text-2xl">ประกาศนียบัตรวิชาชีพขั้นสูง (ปวส.)</h3>
-                                <p class="leading-snug tracking-wide text-gray-900 text-opacity-100 text-xl">โรงเรียนปัญญาวรคุณ บางแค กรุงเทพมหานคร</p>
+                                <h3 class="mb-3 font-bold text-gray-800 text-2xl">บริษัท ซีม ดีเวลอบเมนท์(ประเทศไทย) จำกัด</h3>
+                                <p class="leading-snug tracking-wide text-gray-900 text-opacity-100 text-xl">ก่อตั้งบริษัทรับเหงางานระบบไฟฟ้า ทั้งในและต่างประเทศ</p>
                             </div>
-                            <img src="{{ asset('img/school3.png') }}" alt="school" class="h-40">
+                            <img src="{{ asset('img/work2.jpg') }}" alt="school" class="h-40">
                         </div>
                 </div>
             </div>
